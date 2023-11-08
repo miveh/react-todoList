@@ -19,17 +19,21 @@ function Main({ todoList, setTodoList }) {
 
   return (
     <Container>
-      {todoList.map((item) => (
-        <Todo
-          key={item.id}
-          todoList={todoList}
-          setTodoList={setTodoList}
-          id={item.id}
-          todo={item.todo}
-          isDone={item.isDone}
-          isDeleted={item.isDeleted}
-        />
-      ))}
+      {todoList.map((item) =>
+        !item.isDeleted ? (
+          <Todo
+            key={item.id}
+            todoList={todoList}
+            setTodoList={setTodoList}
+            id={item.id}
+            todo={item.todo}
+            isDone={item.isDone}
+            isDeleted={item.isDeleted}
+          />
+        ) : (
+          ""
+        )
+      )}
     </Container>
   );
 }

@@ -6,10 +6,6 @@ function Home() {
   const [todoList, setTodoList] = useState([]);
   const [todo, setTodo] = useState("");
 
-  useEffect(() => {
-    console.log(todoList);
-  }, [todoList]);
-
   return (
     <>
       <Header
